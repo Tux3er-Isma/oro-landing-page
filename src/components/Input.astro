@@ -1,0 +1,58 @@
+---
+const { label, placeholder } = Astro.props;
+---
+
+<div class="inpt-container">
+    <label class="inpt-container__label">{label} <span class="inpt-container__label__a"> *</span></label>
+    <input type="text" class="inpt-container__inpt" placeholder={placeholder} required>
+</div>
+
+<style lang="scss">
+    .inpt-container{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 40px;
+
+        &__label{
+            font-size: 22px;
+            margin-bottom: 15px;
+
+            &__a{
+                color: hsl(354, 84%, 57%);
+                        opacity: .5;
+            }
+
+            &:hover{
+                cursor: text;
+            }
+        }
+
+        &__inpt{
+            width: 600px;
+            padding: 10px;
+            border-radius: 12px;
+            outline: none;
+            border: 1.5px solid #9e9e9e;
+            font-size: 20px;
+            transition: all .5s;
+
+            &::placeholder{
+                opacity: .40;
+                font-weight: 100;
+            }
+
+            &:focus{
+                box-shadow: 0px 0px 40px #ffa93f8c;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 480px){
+        .inpt-container{
+
+            &__inpt{
+                width: 300px;
+            }
+        }
+    }
+</style>
