@@ -1,0 +1,362 @@
+---
+import Input from "./Input.astro";
+import Select from "./Select.astro"
+---
+
+<h1 class="form-container__title">¿Cómo prefieres recibir la información?</h1>
+<div class="form-container" id="form-container">
+    <form onsubmit="return false" class="form-container__form">
+        <Input label="Nombre y apellidos" placeholder="Ingresa tu nombre y tu apellido"></Input>
+        <Input label="Email" placeholder="Ingresa tu email"></Input>
+        <Input label="Número de Telef." placeholder="Escriba su número de telefono"></Input>
+
+        <Select label="Cómo prefieres recibir la información" a=" *">
+            <option value="volvo" slot="option">WhatsApp</option>
+            <option value="saab" slot="option">Llamada Telefonica</option>
+            <option value="vw" slot="option">Email</option>
+            <option value="audi" disabled selected class="select-container__select__option" slot="option">Escojer opción</option>
+        </Select>
+        <Select label="Cuánto podrías ahorrar / invertir?" a=" ">
+            <option value="volvo" slot="option">entre 1.000 y 5.000 euros</option>
+            <option value="saab" slot="option">entre 3.000 y 10.000 euros</option>
+            <option value="vw" slot="option">entre 10.000 y 20.000 euros</option>
+            <option value="vw" slot="option">entre 20.000 y 50.000 euros</option>
+            <option value="vw" slot="option">entre 50.000 y 100.000 euros</option>
+            <option value="vw" slot="option">más de 100.000 euros</option>
+            <option value="audi" disabled selected class="select-container__select__option" slot="option">Escojer opción</option>
+        </Select>
+
+        <div class="form-container__form__msg-container">
+            <label class="form-container__form__msg-container__label">Mensaje <span class="form-container__form__msg-container__label__a"> *</span></label>
+            <textarea  class="form-container__form__msg-container__inpt"></textarea>
+        </div>
+
+        <div class="form-container__form__checkbox-container">
+            <div class="form-container__form__checkbox-container__inpt-container">
+                <input type="checkbox" class="form-container__form__checkbox-container__inpt-container__inpt custom-checkbox" required checked="checked">
+                <label class="form-container__form__checkbox-container__inpt-container__checkmark checkmark"></label>
+            </div>
+            <a><p class="form-container__form__checkbox-container__txt">He leído y acepto la <a class="form-container__form__checkbox-container__txt__link">Política y Privacidad</a></p></a>
+        </div>
+        <button class="form-container__form__btn">
+  <div class="svg-wrapper-1">
+    <div class="svg-wrapper">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+      >
+        <path fill="none" d="M0 0h24v24H0z"></path>
+        <path
+          fill="currentColor"
+          d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+        ></path>
+      </svg>
+    </div>
+  </div>
+  <span>Enviar</span>
+</button>
+
+    </form>
+    <div class="form-container__img-container">
+        <img src="https://cdn.discordapp.com/attachments/973568724722389052/1165188842723213322/fsdfsdfsd.png?ex=6545f1ac&is=65337cac&hm=8a720e270aae6cb780536ba9ce18b8d1a93da78e1a8fa92da6c56299c03efb69&" class="form-container__img-container__img--2">
+    </div>
+</div>
+
+<style lang="scss">
+    .pop-up{
+        width: 400px;
+    }
+
+
+    button {
+  font-family: inherit;
+  font-size: 20px;
+  color: white;
+  background: hsla(29, 65%, 54%, 1);
+                    background: linear-gradient(45deg, hsla(29, 65%, 54%, 1) 0%, hsla(50, 100%, 70%, 1) 100%);
+
+                    background: -moz-linear-gradient(45deg, hsla(29, 65%, 54%, 1) 0%, hsla(50, 100%, 70%, 1) 100%);
+
+                    background: -webkit-linear-gradient(45deg, hsla(29, 65%, 54%, 1) 0%, hsla(50, 100%, 70%, 1) 100%);
+
+
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+button:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+button:hover span {
+  transform: translateX(5em);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+
+
+    .form-container{
+        overflow: hidden;
+        padding: 0px;
+        height: 1100px;
+        padding-bottom: 0px;
+        display: flex;
+        justify-content: space-between;
+        // display: flex;
+        // justify-content: space-between;
+
+        &__title{
+            font-size: 45px;
+            margin-bottom: 70px;
+            margin-left: 40px;
+        }
+
+        &__form{
+                margin-left: 40px;
+
+                &__msg-container{
+                    display: flex;
+                    flex-direction: column;
+
+                    &__label{
+                        font-size: 22px;
+                        margin-bottom: 15px;
+
+                        &__a{
+                            color: hsl(354, 84%, 57%);
+                            opacity: .5;
+                        }
+
+                        &:hover{
+                            cursor: text;
+                        }
+                    }
+
+                    &__inpt{
+                        width: 600px;
+                        height: 200px;
+                        padding: 10px;
+                        border-radius: 12px;
+                        outline: none;
+                        border: 1.5px solid #9e9e9e;
+                        font-size: 20px;
+                        resize: none;
+                        transition: all .5s;
+
+                        &:focus{
+                            box-shadow: 0px 0px 40px #ffa93f8c;
+                        }
+                    }
+                }
+
+                &__checkbox-container{
+                    display: flex;
+                    align-items: center;
+                    margin-top: 20px;
+
+                    &__inpt-container{
+
+                        &__inpt{
+                            width: 25px;
+                            height: 25px;
+                            accent-color: #ffa93f8c;
+                            transition: all .5s;
+
+                            &:hover{
+                                cursor: pointer;
+                                box-shadow: 0px 0px 140px 40px #fab1078c;
+                            }
+                        }
+
+                        &__checkmark{
+                        }
+                    }
+
+                    &__txt{
+                        margin-left: 10px;
+                        font-size: 20px;
+
+                        &__link{
+                            color: #ffa93f8c;
+
+                            &:hover{
+                                text-decoration: underline;
+                                cursor: pointer;
+
+                                
+                            }
+                        }
+                    }
+                }
+
+                &__btn{
+                    margin-top: 40px;
+                    outline: none;
+                    border: none;
+                    padding: 20px;
+                    color: #fff;
+                    font-size: 25px;
+                    width: 150px;
+                    border-radius: 12px;
+                    transition: all .2s;
+                    background: hsla(29, 65%, 54%, 1);
+                    background: linear-gradient(45deg, hsla(29, 65%, 54%, 1) 0%, hsla(50, 100%, 70%, 1) 100%);
+
+                    background: -moz-linear-gradient(45deg, hsla(29, 65%, 54%, 1) 0%, hsla(50, 100%, 70%, 1) 100%);
+
+                    background: -webkit-linear-gradient(45deg, hsla(29, 65%, 54%, 1) 0%, hsla(50, 100%, 70%, 1) 100%);
+
+
+
+
+                
+                    &:hover{
+                        cursor: pointer;
+                        scale: 1.1;
+                    }
+                }
+            }
+
+        &__img-container{
+            position: relative;
+            top: 10px;
+            align-self: flex-end;
+
+            &__img--2{
+                width: 500px;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1400px){
+        .form-container{
+
+            &__title{
+                margin-left: 100px;
+            }
+
+            &__form{
+                position: relative;
+                margin-left: 100px;
+            }
+
+            &__img-container{
+                align-self: flex-end;
+
+                &__img--2{
+                    width: 700px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 480px){
+        .form-container{
+            height: 1100px;
+
+            &__form{
+
+                &__msg-container{
+
+                    &__inpt{
+                        width: 300px;
+                    }
+                }
+            }
+
+            &__img-container{
+                display: none;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 900px){
+        .form-container{
+            height: 1100px;
+
+            &__form{
+
+                &__msg-container{
+
+                    &__inpt{
+                    }
+                }
+            }
+
+            &__img-container{
+                display: none;
+            }
+        }
+    }
+</style>
+
+<script is:inline>
+    const btn = document.querySelector('.form-container__form__btn');
+	const form = document.querySelector('.form-container__form');
+
+    let name = form.childNodes[0].childNodes[1];
+        let email = form.childNodes[1].childNodes[1];
+        let num = form.childNodes[2].childNodes[1];
+        let info = form.childNodes[3].childNodes[1].options[form.childNodes[3].childNodes[1].selectedIndex].text;
+        let ammount = form.childNodes[4].childNodes[1].options[form.childNodes[4].childNodes[1].selectedIndex];
+        if (ammount == "Escojer opción"){
+            ammount = " "
+        } else {
+            ammount = form.childNodes[4].childNodes[1].options[form.childNodes[4].childNodes[1].selectedIndex];
+        }
+        let msg = form.childNodes[5].childNodes[1];
+
+    btn.addEventListener('mouseover', () =>{
+
+        if (name.value == "" || email.value == "" || num.value == "" || info.text == "" || ammount.text == "" || msg.value == ""){
+            btn.style.cursor = 'not-allowed';
+        } else {
+            btn.style.cursor = 'pointer';
+
+            btn.addEventListener('click', () =>{
+                const div = document.createElement('DIV');
+                div.innerHTML = "Hola";
+                div.classList.add('pop-up');
+                document.body.appendChild(div);
+            })
+        }
+    })
+	console.log(form.childNodes);
+</script>
