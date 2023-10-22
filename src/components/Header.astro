@@ -1,0 +1,272 @@
+
+
+<header class="header" id="header">
+    <div class="header__black"></div>
+    <img src="https://cdn.discordapp.com/attachments/973568724722389052/1164925935674470421/oro.web.principal.11.png?ex=6544fcd2&is=653287d2&hm=bf1a86b95938ec976fd7b33b06d025842519c1fd4e4f7f3ef1e7ab503fb0e6d7&" alt="" class="header__img">
+    <div class="header__title-container">
+        <h1 class="header__title-container__title">Descubre la rentabilidad y seguridad que ofrece el oro</h1>
+    </div>
+    <div class="header__video-container">
+        <video width="400" controls class="header__video-container__video header__video-container__video--1">
+            <source src="" type="video/mp4">
+          </video>
+          <div class="header__video-container__video header__video-container__video--2">
+            <img src="https://cdn.discordapp.com/attachments/973568724722389052/1165397595561136208/image.png?ex=6546b416&is=65343f16&hm=5405edc7d40f0607bdfe68add222aa995cc6eb102dcd13f051540ce2f9e0c1c0&" alt="Play Btn" class="header__video-container__video__play">
+          </div>
+    </div>
+    <a href="#form-container"><button type="button" class="header__btn">Contáctanos</button></a>
+
+</header>
+
+<style lang="scss">
+    .header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        margin-bottom: 400px;
+
+        &__img{
+            width: 98.7vw;
+            position: absolute;
+            top: -60px;
+            height: 120vh;
+            z-index: -1;
+        }
+
+        &__title-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &__title{
+                color: #fff;
+                font-size: 50px;
+                width: 900px;
+                margin-top: 10px;
+                text-align: center;
+                text-transform: uppercase;
+                font-weight: bold;
+                color: #FFB000;
+            }
+        }
+
+        &__video-container{
+            display: flex;
+            justify-content: center;
+            // position: relative;
+            // top: 250px;
+
+            &__video{
+                margin-top: 250px;
+                height: 400px;
+                width: 650px;
+                outline: 10px solid #fff;
+                border-radius: 20px;
+                background-color: #232323;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &__play{
+                    border-radius: 50%;
+                    width: 100px;
+                    transition: all .5s;
+
+                    &:hover{
+                        box-shadow: 0px 0px 40px #ffa93f8c;
+                        cursor: pointer;
+                        scale: 1.15;
+                    }
+                }
+            }
+
+            &__video--1{
+                display: none;
+            }
+        }
+
+        &__btn{
+            margin-top: 50px;
+            background-color: #ffbc00;
+            color: #fff;
+            padding: 20px;
+            font-size: 20px;
+            outline: none;
+            width: 300px;
+            border: none;
+            border-radius: 100px;
+            transition: all 1s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.5s;
+            transition-property: box-shadow;
+            background: #ffbc00;
+            box-shadow: 0 0 25px #ffbc00;
+
+            &:hover{
+                cursor: pointer;
+                box-shadow: 0 0 5px #ffd666,
+                0 0 25px #ffd666,
+                0 0 50px #ffd666,
+                0 0 100px #ffd666;
+
+            //     &::before{
+            //     content: "";
+            //     position: absolute;
+            //     width: 300px;
+            //     height: 65px;
+            //     z-index: -1;
+            //     background-color: #0f0;
+            //     background: linear-gradient(45deg, 
+            //     #9e8b5a, #daa44f
+            //     );
+            //     padding: 20px;
+            //     filter: blur(8px);
+            //     background-size: 800%;
+            //     border-radius: 40px;
+            //     animation: glowing 20s linear infinite;
+            // }
+            }
+
+
+            // @keyframes glowing{
+            //     0%{
+            //         background-position: 0 0;
+            //     }
+
+            //     50%{
+            //         background-position: 400% 0;
+            //     }
+
+            //     100%{
+            //         background-position: 0 0 ;
+            //     }
+            // }
+
+        }
+    
+    }
+
+    @media only screen and (min-width: 1400px){
+        .header{
+            margin-bottom: 800px;
+
+            &__img{
+                width: 101vw;
+            }
+
+            &__title-container{
+                margin-top: 60px;
+
+                &__title{
+                    font-size: 60px;
+                    width: 900px;
+                }
+            }
+
+            &__video-container{
+
+                &__video{
+                    margin-top: 720px;
+                    height: 600px;
+                    width: 850px;
+                }
+            }
+
+            &__btn{
+                width: 400px;
+                padding: 25px;
+                font-size: 25px;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 480px){
+        .header{
+            margin-bottom: 100px;
+
+            &__title-container{
+                background-color: #000;
+                width: 100vw;
+            }
+
+            &__img{
+                width: 100vw;
+                height: 40vh;
+                position: absolute;
+                z-index: -10;
+                top: 170px;
+            }
+
+            &__title-container{
+
+                &__title{
+                    font-size: 46px;
+                    width: 390px;
+                }
+            }
+
+            &__video-container{
+
+                &__video{  
+                    margin-top: 160px;              
+                    height: 200px;
+                    width: 300px;
+
+                    &__play{
+                        width: 70px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 700px) and (max-width: 1000px){
+        .header{
+            margin-bottom: 100px;
+
+            &__title-container{
+                background-color: #000;
+                width: 100vw;
+            }
+
+            &__img{
+                width: 100vw;
+                height: 40vh;
+                position: absolute;
+                z-index: -10;
+                top: 170px;
+            }
+
+            &__title-container{
+
+                &__title{
+                    font-size: 46px;
+                    width: 390px;
+                }
+            }
+
+            &__video-container{
+
+                &__video{  
+                    margin-top: 260px;              
+                    height: 300px;
+                    width: 500px;
+                }
+            }
+        }
+    }
+</style>
+
+<script is:inline>
+    const video1 = document.querySelector('.header__video-container__video--1');
+    const video2 = document.querySelector('.header__video-container__video--2');
+    const playBtn = document.querySelector('.header__video-container__video__play');
+
+    playBtn.addEventListener('click', () =>{
+        video1.style.display = 'block';
+        video2.style.display = 'none';
+    })
+</script>
