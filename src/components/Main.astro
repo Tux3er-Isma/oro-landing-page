@@ -1,0 +1,162 @@
+---
+import Card from "./Card.astro";
+---
+
+<main class="main">
+    <h1 class="main__title">3 Razones para <br class="br-1">invertir <br class="br-2">en <span class="main__title__orange">METALES DE INVERSIÓN</span></h1>
+    <div class="main__cards-container">
+        <Card img="https://cdn.discordapp.com/attachments/973568724722389052/1164926150284431452/cartera.png?ex=6544fd05&is=65328805&hm=7928b9ba22146812fdb1de4ee90e096141d55735c337abc7d64e23e8211d9f04&" title="Diversificación" secondTitle="de cartera" txt="El oro reduce el riesgo el agregar variedad a tu portafolio"></Card>
+        <Card img="https://cdn.discordapp.com/attachments/973568724722389052/1164926149986631766/inflacion.png?ex=6544fd05&is=65328805&hm=9b392f4b48a983a38ee7fec88aedcc4fdd000b0115155e8d1203ef0eb1702226&" title="Protección contra" secondTitle="la inflación" txt="El oro suele mantener su valor a lo largo del tiempo, protegiéndote de la pérdida de poder adquisitivo."></Card>
+        <Card img="https://cdn.discordapp.com/attachments/973568724722389052/1164926149705609297/bancarrota.png?ex=6544fd05&is=65328805&hm=e3624f25c9c4a70fe369b3a271464eb5ca67a56b2df4a1e4cb9b00a82b5957fe&" title="Refugio seguro" secondTitle="en tiempos de crisis" txt="En tiempos de crisis económicas o políticas, el oro es un activo refugio que tiende a mantener su valor"></Card>
+    </div>
+</main>
+<div class="main__arrow-container">
+    <a href="/public/Diversificación de cartera.pdf" target="_blank"><button type="button" class="main__arrow-container__btn">¿Quieres saber más?</button></a>
+</div>
+
+<style lang="scss">
+        .br-1{
+            display: none;
+        }
+
+        .br-2{
+            display: block;
+        }
+
+    .main{
+        margin-bottom: 100px;
+        height: 550px;
+        padding: 20px;
+        margin-top: 30px;
+        background-color: #fff1de;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        &__title{
+            margin-left: 100px;
+            width: 690px;
+            font-size: 50px;
+
+            &__orange{
+                color: #ffa300;
+                font-weight: bold;
+            }
+        }
+
+        &__cards-container{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        &__arrow-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 100px;
+            margin-bottom: 80px;
+
+            &__img{
+                margin-bottom: 50px;
+            }
+
+            &__btn{
+                border: none;
+                outline: none;
+                font-size: 30px;
+                padding: 20px;
+                color: #ffac1a;
+                border: 3px solid #ffac1a;
+                background-color: #fff;
+                transition: all .5s;
+                width: 700px;
+
+
+                &:hover{
+                    cursor: pointer;
+                    color: #fff;
+                    background-color: #ffac1a;
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1400px){
+        .main{
+            height: 650px;
+
+            &__cards-container{
+                justify-self: center;
+                align-self: center;
+                width: 1900px;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 480px){
+        .br-1{
+            display: block;
+        }
+
+        .br-2{
+            display: none;
+        }
+
+        .main{
+            height: 1200px;
+
+            &__title{
+                text-align: center;
+                align-self: center;
+                margin-left: 0px;
+                width: 250px;
+                font-size: 35px;
+                margin-bottom: 50px;
+            }
+
+            &__cards-container{
+                height: 1100px;
+            }
+
+            &__arrow-container{
+                margin-top: 120px;
+
+                &__btn{
+                    width: 300px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 700px) and (max-width: 1000px){
+        .br-1{
+            display: block;
+        }
+
+        .br-2{
+            display: none;
+        }
+
+        .main{
+            height: 1200px;
+
+            &__title{
+                text-align: center;
+                align-self: center;
+                margin-left: 0px;
+                width: 250px;
+                font-size: 35px;
+                margin-bottom: 50px;
+            }
+
+            &__cards-container{
+                height: 900px;
+            }
+
+            &__arrow-container{
+                margin-top: 120px;
+            }
+        }
+    }
+</style>
