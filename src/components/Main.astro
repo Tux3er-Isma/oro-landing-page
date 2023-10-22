@@ -1,5 +1,6 @@
 ---
 import Card from "./Card.astro";
+import pdf from "../../public/diversificacion.pdf";
 ---
 
 <main class="main">
@@ -11,7 +12,7 @@ import Card from "./Card.astro";
     </div>
 </main>
 <div class="main__arrow-container">
-    <a href="/public/diversificacion.pdf" target="_blank"><button type="button" class="main__arrow-container__btn">¿Quieres saber más?</button></a>
+    <a href={pdf} target="_blank"><button type="button" class="main__arrow-container__btn">¿Quieres saber más?</button></a>
 </div>
 
 <style lang="scss">
