@@ -27,13 +27,13 @@ import Select from "./Select.astro"
         </Select>
 
         <div class="form-container__form__msg-container">
-            <label class="form-container__form__msg-container__label">Mensaje <span class="form-container__form__msg-container__label__a"> *</span></label>
+            <label class="form-container__form__msg-container__label">Mensaje <span class="form-container__form__msg-container__label__a"></span></label>
             <textarea  class="form-container__form__msg-container__inpt"></textarea>
         </div>
 
         <div class="form-container__form__checkbox-container">
             <div class="form-container__form__checkbox-container__inpt-container">
-                <input type="checkbox" class="form-container__form__checkbox-container__inpt-container__inpt custom-checkbox" required checked="checked">
+                <input type="checkbox" class="form-container__form__checkbox-container__inpt-container__inpt custom-checkbox" required>
                 <label class="form-container__form__checkbox-container__inpt-container__checkmark checkmark"></label>
             </div>
             <a><p class="form-container__form__checkbox-container__txt">He leído y acepto la <a class="form-container__form__checkbox-container__txt__link">Política y Privacidad</a></p></a>
@@ -289,7 +289,7 @@ button:active {
 
     @media only screen and (max-width: 480px){
         .form-container{
-            height: 1100px;
+            height: 1200px;
 
             &__form{
 
@@ -307,7 +307,7 @@ button:active {
         }
     }
 
-    @media only screen and (max-width: 900px){
+    @media only screen and (max-width: 900px) and (min-width: 481px){
         .form-container{
             height: 1100px;
 

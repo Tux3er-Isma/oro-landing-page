@@ -11,7 +11,7 @@ import Card from "./Card.astro";
     </div>
 </main>
 <div class="main__arrow-container">
-    <a href="/public/Diversificación de cartera.pdf" target="_blank"><button type="button" class="main__arrow-container__btn">¿Quieres saber más?</button></a>
+    <a href="/public/Diversificación_de_cartera.pdf" target="_blank"><button type="button" class="main__arrow-container__btn">¿Quieres saber más?</button></a>
 </div>
 
 <style lang="scss">
@@ -129,7 +129,38 @@ import Card from "./Card.astro";
         }
     }
 
-    @media only screen and (min-width: 700px) and (max-width: 1000px){
+    @media only screen and (min-width: 801px) and (max-width: 900px){
+        .br-1{
+            display: block;
+        }
+
+        .br-2{
+            display: none;
+        }
+
+        .main{
+            height: 1200px;
+
+            &__title{
+                text-align: center;
+                align-self: center;
+                margin-left: 0px;
+                width: 250px;
+                font-size: 35px;
+                margin-bottom: 50px;
+            }
+
+            &__cards-container{
+                height: 900px;
+            }
+
+            &__arrow-container{
+                margin-top: 120px;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 700px) and (max-width: 800px){
         .br-1{
             display: block;
         }

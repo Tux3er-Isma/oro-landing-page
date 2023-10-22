@@ -10,8 +10,8 @@ import gold from "../../public/gold.png";
         <h1 class="header__title-container__title">Descubre la rentabilidad y seguridad que ofrece el oro</h1>
     </div>
     <div class="header__video-container">
-        <video width="400" controls class="header__video-container__video header__video-container__video--1">
-            <source src="" type="video/mp4">
+        <video width="400" controls autoplay class="header__video-container__video header__video-container__video--1">
+            <source src="/public/video.mp4" type="video/mp4">
           </video>
           <div class="header__video-container__video header__video-container__video--2">
             <img src="https://cdn.discordapp.com/attachments/973568724722389052/1165397595561136208/image.png?ex=6546b416&is=65343f16&hm=5405edc7d40f0607bdfe68add222aa995cc6eb102dcd13f051540ce2f9e0c1c0&" alt="Play Btn" class="header__video-container__video__play">
@@ -226,7 +226,7 @@ import gold from "../../public/gold.png";
         }
     }
 
-    @media only screen and (min-width: 700px) and (max-width: 1000px){
+    @media only screen and (min-width: 801px) and (max-width: 900px){
         .header{
             margin-bottom: 100px;
 
@@ -238,6 +238,42 @@ import gold from "../../public/gold.png";
             &__img{
                 width: 100vw;
                 height: 40vh;
+                position: absolute;
+                z-index: -10;
+                top: 170px;
+            }
+
+            &__title-container{
+
+                &__title{
+                    font-size: 46px;
+                    width: 390px;
+                }
+            }
+
+            &__video-container{
+
+                &__video{  
+                    margin-top: 260px;              
+                    height: 300px;
+                    width: 500px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 700px) and (max-width: 800px){
+        .header{
+            margin-bottom: 600px;
+
+            &__title-container{
+                background-color: #000;
+                width: 100vw;
+            }
+
+            &__img{
+                width: 100vw;
+                height: 100vh;
                 position: absolute;
                 z-index: -10;
                 top: 170px;
