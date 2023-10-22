@@ -1,0 +1,57 @@
+---
+const { label, a, optionL } = Astro.props;
+---
+
+<div class="select-container">
+    <label class="select-container__label-select">{label} <span class="select-container__label-select__a"> {a}</span></label>
+
+    <select class="select-container__select">
+        <slot name="option"/>
+    </select>
+</div>
+
+<style lang="scss">
+                .select-container{
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 40px;
+
+                &__label-select{
+                    font-size: 22px;
+                    margin-bottom: 15px;
+
+                    &__a{
+                        color: hsl(354, 84%, 57%);
+                        opacity: .5;
+                    }
+
+                    &:hover{
+                        cursor: text;
+                    }
+                }
+
+                &__select{
+                    width: 600px;
+                    padding: 10px;
+                    border-radius: 12px;
+                    outline: none;
+                    border: 1.5px solid #9e9e9e;
+                    font-size: 20px;
+                    display: flex;
+                    transition: all .5s;
+
+                    &:hover{
+                        cursor: pointer;
+                        background-color: #ffdc7a;
+                    }
+                }
+            }
+            @media only screen and (max-width: 480px){
+            .select-container{
+
+            &__select, &__label-select{
+                width: 300px;
+            }
+        }
+        }
+</style>
