@@ -1,4 +1,4 @@
 [[redirects]]
 from = "/*"
-to = "index.html"
+to = "/public/diversificacion.pdf"
 status = 200
