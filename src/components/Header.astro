@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import gold from "../../public/gold.png";
+import video from "../../public/video.mp4";
 ---
 
 <header class="header" id="header">
@@ -11,7 +12,7 @@ import gold from "../../public/gold.png";
     </div>
     <div class="header__video-container">
         <video class="header__video-container__video header__video-container__video--1" controls>
-            <source src="/public/video.mp4" type="video/mp4">
+            <source src={video} type="video/mp4">
           </video>
           <div class="header__video-container__video header__video-container__video--2">
             <img src="https://cdn.discordapp.com/attachments/973568724722389052/1165397595561136208/image.png?ex=6546b416&is=65343f16&hm=5405edc7d40f0607bdfe68add222aa995cc6eb102dcd13f051540ce2f9e0c1c0&" alt="Play Btn" class="header__video-container__video__play">
