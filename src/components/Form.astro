@@ -1,6 +1,6 @@
 ---
 import Input from "./Input.astro";
-import Select from "./Select.astro"
+import Select from "./Select.astro";
 ---
 
 <h1 class="form-container__title">¿Cómo prefieres recibir la información?</h1>
@@ -10,18 +10,11 @@ import Select from "./Select.astro"
         <Input label="Email" placeholder="Ingresa tu email"></Input>
         <Input label="Número de Telef." placeholder="Escriba su número de telefono"></Input>
 
-        <Select label="Cómo prefieres recibir la información" a=" *">
-            <option value="volvo" slot="option">WhatsApp</option>
-            <option value="saab" slot="option">Llamada Telefonica</option>
-            <option value="vw" slot="option">Email</option>
-            <option value="audi" disabled selected class="select-container__select__option" slot="option">Escojer opción</option>
-        </Select>
+        <Input label="Cuándo prefieres que el consultor contacte contigo" placeholder="Escriba una fecha y hora"></Input>
         <Select label="Cuánto podrías ahorrar / invertir?" a=" ">
             <option value="volvo" slot="option">entre 1.000 y 5.000 euros</option>
-            <option value="saab" slot="option">entre 3.000 y 10.000 euros</option>
-            <option value="vw" slot="option">entre 10.000 y 20.000 euros</option>
-            <option value="vw" slot="option">entre 20.000 y 50.000 euros</option>
-            <option value="vw" slot="option">entre 50.000 y 100.000 euros</option>
+            <option value="saab" slot="option">entre 5.000 y 30.000 euros</option>
+            <option value="vw" slot="option">entre 30.000 y 100.000 euros</option>
             <option value="vw" slot="option">más de 100.000 euros</option>
             <option value="audi" disabled selected class="select-container__select__option" slot="option">Escojer opción</option>
         </Select>
@@ -334,7 +327,7 @@ button:active {
     let name = form.childNodes[0].childNodes[1];
         let email = form.childNodes[1].childNodes[1];
         let num = form.childNodes[2].childNodes[1];
-        let info = form.childNodes[3].childNodes[1].options[form.childNodes[3].childNodes[1].selectedIndex].text;
+        let info;
         let ammount = form.childNodes[4].childNodes[1].options[form.childNodes[4].childNodes[1].selectedIndex];
         if (ammount == "Escojer opción"){
             ammount = " "
@@ -345,18 +338,35 @@ button:active {
 
     btn.addEventListener('mouseover', () =>{
 
-        if (name.value == "" || email.value == "" || num.value == "" || info.text == "" || ammount.text == "" || msg.value == ""){
+        if (name.value == "" || email.value == "" || num.value == ""){
             btn.style.cursor = 'not-allowed';
         } else {
             btn.style.cursor = 'pointer';
 
             btn.addEventListener('click', () =>{
-                const div = document.createElement('DIV');
-                div.innerHTML = "Hola";
-                div.classList.add('pop-up');
-                document.body.appendChild(div);
+                // const div = document.createElement('DIV');
+                // div.innerHTML = "Hola";
+                // div.classList.add('pop-up');
+                // document.body.appendChild(div);
+                // var Email = { send: function (a) { return new Promise(function (n, e) { a.nocache = Math.floor(1e6 * Math.random() + 1), a.Action = "Send"; var t = JSON.stringify(a); Email.ajaxPost("https://smtpjs.com/v3/smtpjs.aspx?", t, function (e) { n(e) }) }) }, ajaxPost: function (e, n, t) { var a = Email.createCORSRequest("POST", e); a.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), a.onload = function () { var e = a.responseText; null != t && t(e) }, a.send(n) }, ajax: function (e, n) { var t = Email.createCORSRequest("GET", e); t.onload = function () { var e = t.responseText; null != n && n(e) }, t.send() }, createCORSRequest: function (e, n) { var t = new XMLHttpRequest; return "withCredentials" in t ? t.open(e, n, !0) : "undefined" != typeof XDomainRequest ? (t = new XDomainRequest).open(e, n) : t = null, t } };
+
+                // Email.send({
+                //     SecureToken: "3d5aa13f-30cd-49ce-8353-eac475b8c092",
+                //     // Host : "smtp.elasticemail.com",
+                //     // Username : "isma.tux3er@gmail.com",
+                //     // Password : "69595BF7440A82F0C7E59A6759635232B412",
+                //     To : 'isma.tux3er@gmail.com',
+                //     From : "isma.tux3er@gmail.com",
+                //     Subject : `Isma y Xavi habeis recivido un email de: ${name.value}  y este es su email: ${email.value}`,
+                //     Body : `El mensaje es ${msg} y su numero de telefono es ${num.value}`
+                // }).then(
+                //     message => alert(message)
+                // )
             })
         }
     })
 	console.log(form.childNodes);
 </script>
+
+<script is:inline>
+
