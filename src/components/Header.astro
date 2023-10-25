@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import gold from "../../public/gold.png";
-import video from "../../public/video.mp4";
 ---
 
 <header class="header" id="header">
@@ -11,8 +10,8 @@ import video from "../../public/video.mp4";
         <h1 class="header__title-container__title">Descubre la rentabilidad y seguridad que ofrece el oro</h1>
     </div>
     <div class="header__video-container">
-        <video width="400" controls autoplay class="header__video-container__video header__video-container__video--1">
-            <source src={video} type="video/mp4">
+        <video class="header__video-container__video header__video-container__video--1" controls>
+            <source src="/public/video.mp4" type="video/mp4">
           </video>
           <div class="header__video-container__video header__video-container__video--2">
             <img src="https://cdn.discordapp.com/attachments/973568724722389052/1165397595561136208/image.png?ex=6546b416&is=65343f16&hm=5405edc7d40f0607bdfe68add222aa995cc6eb102dcd13f051540ce2f9e0c1c0&" alt="Play Btn" class="header__video-container__video__play">
@@ -64,7 +63,7 @@ import video from "../../public/video.mp4";
             &__video{
                 margin-top: 250px;
                 height: 400px;
-                width: 650px;
+                width: 700px;
                 outline: 10px solid #fff;
                 border-radius: 20px;
                 background-color: #232323;
@@ -86,6 +85,8 @@ import video from "../../public/video.mp4";
             }
 
             &__video--1{
+                height: 400px;
+                width: 700px;
                 display: none;
             }
         }
@@ -174,8 +175,13 @@ import video from "../../public/video.mp4";
 
                 &__video{
                     margin-top: 720px;
-                    height: 600px;
-                    width: 850px;
+                    height: 470px;
+                    width: 780px;
+                }
+
+                &__video--1{
+                    height: 440px;
+                    width: 770px;
                 }
             }
 
@@ -217,11 +223,16 @@ import video from "../../public/video.mp4";
                 &__video{  
                     margin-top: 160px;              
                     height: 200px;
-                    width: 300px;
+                    width: 350px;
 
                     &__play{
                         width: 70px;
                     }
+                }
+
+                &__video--1{
+                    width: 350px;
+                    height: 200px;
                 }
             }
         }
@@ -300,6 +311,8 @@ import video from "../../public/video.mp4";
     }
 </style>
 
+<!-- <script src="./emailJs.js"></script> -->
+
 <script is:inline>
     const video1 = document.querySelector('.header__video-container__video--1');
     const video2 = document.querySelector('.header__video-container__video--2');
@@ -307,6 +320,31 @@ import video from "../../public/video.mp4";
 
     playBtn.addEventListener('click', () =>{
         video1.style.display = 'block';
-        video2.style.display = 'none';
+        video2.style.display = 'none'; 
+
+        video1.play();
     })
+
+//     (function(){
+//                 emailjs.init("BSdSXl0cXcnKUArnV");
+//             })();
+
+//             let params;
+
+// const sendEmail = () =>{
+//     params = {
+//         about: "Hola",
+//         name: "Hola",
+//         email: "skibiditoilot@gmail.com",
+//         message: "Hola skibidi"
+//     }
+// }
+
+// const serviceId = 'service_xkdpubf';
+// const templateId = 'template_jpocdgy';
+
+//                 sendEmail();
+//                 emailjs.send(serviceId, templateId, params).then( res =>{
+//                     alert(res)
+//                 })
 </script>
