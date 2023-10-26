@@ -11,11 +11,19 @@ import pdf from "../../public/diversificacion.pdf";
         <Card img="https://cdn.discordapp.com/attachments/973568724722389052/1164926149705609297/bancarrota.png?ex=6544fd05&is=65328805&hm=e3624f25c9c4a70fe369b3a271464eb5ca67a56b2df4a1e4cb9b00a82b5957fe&" title="Refugio seguro" secondTitle="en tiempos de crisis" txt="En tiempos de crisis económicas o políticas, el oro es un activo refugio que tiende a mantener su valor e incluso incrementarlo"></Card>
     </div>
 </main>
-<div class="main__arrow-container">
-    <a href={pdf} target="_blank"><button type="button" class="main__arrow-container__btn">¿Quieres saber más?</button></a>
+<div class="main__info-container">
+    <p class="main__info-container__txt">¿Por qué los <span class="main__info-container__txt__y">Bancos Centrales</span> están incrementando la compra de <span class="main__info-container__txt__y">oro</span> a marchas forzadas? </p>
+    <p class="main__info-container__txt">¿Por qué las personas de <span class="main__info-container__txt__y">éxito financiero</span> invierten en <span class="main__info-container__txt__y">oro?</span> </p>
+    <p class="main__info-container__txt">¿Por qué los <span class="main__info-container__txt__y">expertos financieros</span> aconsejan diversificar la cartera de inversión en <span class="main__info-container__txt__y">oro?</span></p>
+    <img src="https://cdn.discordapp.com/attachments/973568724722389052/1167078374930395296/descarga-arrow_1.png?ex=654cd16f&is=653a5c6f&hm=73639cdf616e7c01323b9641a0251c54701434bdabd59ec772b64a136dab8507&" alt="Arrow" class="main__info-container__img">
+    <a href={pdf} target="_blank"><button type="button" class="main__info-container__btn">Descúbrelo aquí</button></a>
 </div>
+<!-- <div class="main__arrow-container">
+    <a href={pdf} target="_blank"><button type="button" class="main__arrow-container__btn">¿Quieres saber más?</button></a>
+</div> -->
 
 <style lang="scss">
+      @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,700&family=Gabarito:wght@400;600;700&display=swap');
         .br-1{
             display: none;
         }
@@ -81,6 +89,73 @@ import pdf from "../../public/diversificacion.pdf";
                 }
             }
         }
+
+        &__info-container{
+            padding-top: 30px;
+            padding-bottom: 100px;
+            background-color: #10071e;
+            width: 100vw;
+            margin-bottom: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            &__txt{
+                width: 950px;
+                margin: 40px;
+                text-align: center;
+                font-size: 40px;
+                font-weight: bold;
+                color: #fff;
+
+                &__y{
+                    font-weight: bold;
+                    color: #ffc50d;
+                }
+            }
+
+            &__img{
+                margin-top: 40px;
+                width: 90px;
+                animation: flotate 1.5s infinite ease-in-out;
+
+                @keyframes flotate{
+                    0%{
+                        transform: translateY(-10px)
+                    }
+
+                    50%{
+                        transform: translateY(0px)
+                    }
+
+                    100%{
+                        transform: translateY(-10px)
+                    }
+                }
+            }
+
+            &__btn{
+                margin-top: 40px;
+                border: none;
+                outline: none;
+                font-size: 30px;
+                padding: 20px;
+                color: #000;
+                font-weight: bold;
+                border: 3px solid #ffac1a;
+                background-color: #ffac1a;
+                transition: all .5s;
+                width: 700px;
+
+
+                &:hover{
+                    cursor: pointer;
+                    color: #ffac1a;
+                    background-color: transparent;
+                }
+            }
+        }
     }
 
     @media only screen and (min-width: 1400px){
@@ -127,6 +202,18 @@ import pdf from "../../public/diversificacion.pdf";
                     width: 300px;
                 }
             }
+
+            &__info-container{
+
+                &__txt{
+                    width: 300px;
+                    font-size: 30px;
+                }
+
+                &__btn{
+                    width: 300px;
+                }
+            }
         }
     }
 
@@ -158,6 +245,17 @@ import pdf from "../../public/diversificacion.pdf";
             &__arrow-container{
                 margin-top: 120px;
             }
+
+            &__info-container{
+
+                &__txt{
+                    width: 600px;
+                }
+
+                &__btn{
+                    width: 600px;
+                }
+            }
         }
     }
 
@@ -188,6 +286,17 @@ import pdf from "../../public/diversificacion.pdf";
 
             &__arrow-container{
                 margin-top: 120px;
+            }
+
+            &__info-container{
+
+                &__txt{
+                    width: 600px;
+                }
+
+                &__btn{
+                    width: 600px;
+                }
             }
         }
     }
