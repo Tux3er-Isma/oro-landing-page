@@ -1,6 +1,10 @@
+---
+import pdf from "../../public/diversificacion.pdf";
+---
+
 <footer class="footer">
     <div class="footer__btn-container">
-        <a href="/public/Diversificación de cartera.pdf" target="_blank"><button type="button" class="footer__btn-container__btn">¿Quieres saber más?</button></a>
+        <a href={pdf} target="_blank"><button type="button" class="footer__btn-container__btn">Descubre más</button></a>
         <a href="#header"><button class="footer__btn-container__btn--2">
             <div class="text">
                 <span>Volver</span>
@@ -15,11 +19,12 @@
             </svg>
         </button></a>
     </div>
-    <a class="footer__link">Política y Privacidad</a>
+    <a class="footer__link" href="/privacy">Política de Privacidad</a>
 </footer>
 
 <style lang="scss">
     .footer{
+        width: 100vw;
         padding: 20px;
         background-color: #212121;
         display: flex;
