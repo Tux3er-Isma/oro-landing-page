@@ -3,7 +3,8 @@ import Input from "./Input.astro";
 import Select from "./Select.astro";
 ---
 
-<h1 class="form-container__title">¿Cómo prefieres recibir la información?</h1>
+<h1 class="form-container__title">Recibe asesoramiento<br> personalizado y gratuito de <br>uno de nuestros consultores</h1>
+<h2 class="form-container__subtitle">Rellenando este formulario:</h2>
 <div class="form-container" id="form-container">
     <form onsubmit="return false" class="form-container__form">
         <Input label="Nombre y apellidos" placeholder="Ingresa tu nombre y tu apellido"></Input>
@@ -137,6 +138,12 @@ button:active {
 
         &__title{
             font-size: 45px;
+            margin-bottom: 20px;
+            margin-left: 40px;
+        }
+
+        &__subtitle{
+            font-size: 25px;
             margin-bottom: 70px;
             margin-left: 40px;
         }
@@ -262,6 +269,10 @@ button:active {
         .form-container{
 
             &__title{
+                margin-left: 100px;
+            }
+
+            &__subtitle{
                 margin-left: 100px;
             }
 
