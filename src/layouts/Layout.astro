@@ -132,14 +132,14 @@ btnPop.addEventListener('click', (e) =>{
 			console.log(res)
         })
 		setTimeout(() => {
-			nameInpt.value = " ";
-			emailInpt.value = " ";
-			numInpt.value = " ";
-			msgInpt.value = " ";
-			dateInpt.value = " ";
-			hourInpt.value = " ";
-			msgInpt.value = " ";
-			ammountInpt.value = " ";
+			nameInpt.value = "";
+			emailInpt.value = "";
+			numInpt.value = "";
+			msgInpt.value = "";
+			dateInpt.value = "";
+			hourInpt.value = "";
+			msgInpt.value = "";
+			ammountInpt.value = "";
 			checkInpt.checked = false;
 		}, 2000);
     } else {
@@ -179,6 +179,7 @@ btnPop.addEventListener('click', (e) =>{
 		height: 100%;
 		/* From https://css.glass */
 		position: absolute;
+		z-index: 10;
 background: rgba(35, 34, 34, 0.2);
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(5px);
@@ -205,6 +206,7 @@ border: 1px solid rgba(24, 24, 24, 0.3);
 		align-items: center;
 		@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,700&family=Gabarito:wght@400;600;700&display=swap');
 		position: absolute;
+		z-index: 11;
 
 		&__part--2{
 			background-color: #fff;
