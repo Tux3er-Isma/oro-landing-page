@@ -18,9 +18,143 @@ import { ViewTransitions } from 'astro:transitions';
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;900&display=swap" rel="stylesheet">
 		<!-- <ViewTransitions /> -->
+		<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("oxNMD8G8v0yiMdSSq");
+   })();
+</script>
+<script>
+	let btn = document.querySelector("#form-container > form > button");
+	let nameInpt = document.querySelector("#form-container > form > div:nth-child(1) > input");
+	let emailInpt = document.querySelector("#form-container > form > div:nth-child(2) > input");
+	let numInpt = document.querySelector("#form-container > form > div:nth-child(3) > input");
+	let dateInpt = document.querySelector("#form-container > form > div:nth-child(4) > input");
+	let hourInpt = document.querySelector("#form-container > form > input");
+	let ammountInpt = document.querySelector("#form-container > form > div.select-container > select");
+	let msgInpt = document.querySelector("#form-container > form > div.form-container__form__msg-container > textarea");
+	let checkInpt = document.querySelector("#form-container > form > div.form-container__form__checkbox-container > div > input");
+
+	const elementArr = [nameInpt, emailInpt, numInpt, dateInpt];
+
+	btn.addEventListener('click', () =>{
+		let params;
+
+		const sendEmail = () =>{
+			params = {
+    			name: nameInpt.value,
+    			email: emailInpt.value,
+				num: numInpt.value,
+    			message: msgInpt.value,
+				date: dateInpt.value,
+				hour: hourInpt.value,
+				ammount: ammountInpt.value
+			}
+		}
+
+		const serviceId = 'service_7676d9w';
+		const templateId = 'template_jpocdgy';
+
+		if (nameInpt.value == "" || emailInpt.value == "" || numInpt.value == "" || dateInpt.value == "" || hourInpt.value == "" || checkInpt.ckecked == false){
+			const errorArr = document.querySelectorAll('.inpt-container__label-error');
+			for (let i = 0; i < elementArr.length; i++){
+				if (elementArr[i].value == ""){
+					errorArr[i].style.display = 'none';
+					elementArr[i].addEventListener('keyup', () =>{
+					if (elementArr[i].value != ""){
+						errorArr[i].style.display = 'none';
+					} else {
+						errorArr[i].style.display = 'none';
+					}
+				})
+				elementArr[i].addEventListener('input', () =>{
+					if (elementArr[i].value != ""){
+						errorArr[i].style.display = 'none';
+					} else {
+						errorArr[i].style.display = 'none';
+					}
+				})
+				}
+			}
+		} else {
+        
+    let emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+    //Se muestra un texto a modo de ejemplo, luego va a ser un icono
+    if (emailRegex.test(emailInpt.value)) {
+      console.log("correcto");
+	  sendEmail();
+			const popup = document.createElement('DIV');
+			const img = document.createElement('IMG');
+			const part2Container = document.createElement('DIV');
+			const title = document.createElement('H1');
+			const subtitle = document.createElement('H2');
+			const btnPop = document.createElement('BUTTON');
+
+			title.innerHTML = "Agradecemos<br> tu interés";
+			subtitle.innerHTML = "En breve, uno de nuestros consultores<br> contactará contigo."
+			btnPop.innerHTML = "Aceptar";
+
+			part2Container.appendChild(title);
+			part2Container.appendChild(subtitle);
+			part2Container.appendChild(btnPop);
+
+			part2Container.classList.add('popup__part--2');
+			title.classList.add('popup__part--2__title');
+			subtitle.classList.add('popup__part--2__subtitle');
+			btnPop.classList.add('popup__part--2__btn');
+
+			popup.classList.add('popup')
+			img.classList.add('popup__img');
+
+			img.setAttribute('src', "https://cdn.discordapp.com/attachments/973568724722389052/1167796605047545907/image.png?ex=654f6e57&is=653cf957&hm=aa395364e508e61849c2f46f31363a254a11634b50669d768fd379f9ab6914f7&")
+
+			popup.appendChild(img);
+			popup.appendChild(part2Container)
+			document.querySelector('body').appendChild(popup);
+
+	document.body.style.overflowY = 'hidden';
+	popup.style.top = `${window.scrollY}px`;
+	popup.style.display = 'flex';
+	const capa = document.querySelector('.capa');
+	capa.style.top = `${window.scrollY}px`;
+	capa.style.display = 'block';
+
+btnPop.addEventListener('click', (e) =>{
+	e.preventDefault();
+	document.body.style.overflowY = 'scroll';
+	popup.style.display = 'none';
+	const capa = document.querySelector('.capa');
+	capa.style.display = 'none';
+})
+        emailjs.send(serviceId, templateId, params).then( res =>{
+			console.log(res)
+        })
+		setTimeout(() => {
+			nameInpt.value = " ";
+			emailInpt.value = " ";
+			numInpt.value = " ";
+			msgInpt.value = " ";
+			dateInpt.value = " ";
+			hourInpt.value = " ";
+			msgInpt.value = " ";
+			ammountInpt.value = " ";
+			checkInpt.checked = false;
+		}, 2000);
+    } else {
+		console.log("incorrecto");
+    }
+		}
+
+	})
+</script>
 	</head>
 	<body>
-		<slot />
+		<div class="content">
+			<div class="capa"></div>
+			<slot />
+		</div>
 	</body>
 </html>
 <style is:global lang="scss">
@@ -35,6 +169,21 @@ import { ViewTransitions } from 'astro:transitions';
 
 	body{
 		overflow-x: hidden;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.capa{
+		display: none;
+		width: 100%;
+		height: 100%;
+		/* From https://css.glass */
+		position: absolute;
+background: rgba(35, 34, 34, 0.2);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(24, 24, 24, 0.3);
 	}
 
 	a{
@@ -42,7 +191,81 @@ import { ViewTransitions } from 'astro:transitions';
 	}
 
 	::selection {
-  background-color: #FFB000; /* Cambia el color de fondo de la selección */
-  color: #ffffff; /* Cambia el color del texto seleccionado */
-}
+  		background-color: #FFB000; /* Cambia el color de fondo de la selección */
+  		color: #ffffff; /* Cambia el color del texto seleccionado */
+	}
+
+	.popup{
+		min-height: 100vh;
+		width: 100vw;
+		display: none;
+		justify-content: center;
+		align-items: center;
+		justify-self: center;
+		align-items: center;
+		@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,700&family=Gabarito:wght@400;600;700&display=swap');
+		position: absolute;
+
+		&__part--2{
+			background-color: #fff;
+			height: 319px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-around;
+			width: 600px;
+
+			&__title{
+				font-size: 50px;
+				text-align: center;
+				font-weight: bold;
+			}
+
+			&__subtitle{
+				font-size: 15px;
+				text-align: center;
+				color: #666;
+			}
+
+			&__btn{
+				background-color: #FFB000;
+				border: none;
+				outline: none;
+				color: #fff;
+				padding: 10px;
+				font-size: 20px;
+				border: 1px solid #FFB000;
+				width: 150px;
+				cursor: pointer;
+				transition: all .5s;
+
+				&:hover{
+					background-color: transparent;
+					color: #FFB000;
+				}
+			}
+		}
+
+		&__link{
+			color: #FFB000;
+
+		&:hover{
+		text-decoration: underline;
+		}
+		}
+	}
+
+	@media only screen and (max-width: 480px){
+		.popup{
+			flex-direction: column;
+
+			&__part--2{
+				width: 350px;
+			}
+
+			&__img{
+				width: 350px;
+			}
+		}
+	}
 </style>
