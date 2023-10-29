@@ -9,7 +9,7 @@ import { Image } from "astro:assets";
 <div class="form-container" id="form-container">
     <form  class="form-container__form" onsubmit="return false">
         <Input label="Nombre y apellidos" placeholder="Ingresa tu nombre y tu apellido" type="text"></Input>
-        <Input label="Email" placeholder="Ingresa tu email" type="email"></Input>
+        <Input label="Email" placeholder="Ingresa tu email" type="text"></Input>
         <Input label="Número de teléfono" placeholder="Escriba su número de telefono" type="text"></Input>
 
         <Input label="¿Cuándo prefieres que el consultor contacte contigo?" placeholder="Escriba una fecha y hora" type="date"></Input>
@@ -19,7 +19,7 @@ import { Image } from "astro:assets";
             <option value="entre 5.000 y 30.000 euros" slot="option">entre 5.000 y 30.000 euros</option>
             <option value="entre 30.000 y 100.000 euros" slot="option">entre 30.000 y 100.000 euros</option>
             <option value="más de 100.000 euros" slot="option">más de 100.000 euros</option>
-            <option value="audi" disabled selected class="select-container__select__option" slot="option">Escojer opción</option>
+            <option value="no hay selección" disabled selected class="select-container__select__option" slot="option">Escojer opción</option>
         </Select>
 
         <div class="form-container__form__msg-container">
