@@ -1,10 +1,13 @@
 ---
-const { label, placeholder } = Astro.props;
+const { label, placeholder, type } = Astro.props;
 ---
 
 <div class="inpt-container">
-    <label class="inpt-container__label">{label} <span class="inpt-container__label__a"> *</span></label>
-    <input type="text" class="inpt-container__inpt" placeholder={placeholder} required>
+    <div class="inpt-container__label-container">
+        <label class="inpt-container__label">{label} <span class="inpt-container__label__a"> *</span></label>
+        <label class="inpt-container__label inpt-container__label-error">Completa este campo</label>
+    </div>
+    <input type={type} class="inpt-container__inpt" placeholder={placeholder} required>
 </div>
 
 <style lang="scss">
@@ -12,6 +15,12 @@ const { label, placeholder } = Astro.props;
         display: flex;
         flex-direction: column;
         margin-bottom: 40px;
+
+        &__label-container{
+            display: flex;
+            width: 600px;
+            justify-content: space-between;
+        }
 
         &__label{
             font-size: 22px;
@@ -25,6 +34,11 @@ const { label, placeholder } = Astro.props;
             &:hover{
                 cursor: text;
             }
+        }
+
+        &__label-error{
+            display: none;
+            color: hsl(354, 84%, 57%);
         }
 
         &__inpt{
@@ -49,6 +63,10 @@ const { label, placeholder } = Astro.props;
 
     @media only screen and (max-width: 480px){
         .inpt-container{
+
+            &__label{
+                width: 310px;
+            }
 
             &__inpt{
                 width: 300px;
