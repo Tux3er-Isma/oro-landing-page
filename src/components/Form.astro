@@ -8,12 +8,18 @@ import { Image } from "astro:assets";
 <h2 class="form-container__subtitle">Rellenando este formulario:</h2>
 <div class="form-container" id="form-container">
     <form  class="form-container__form" onsubmit="return false">
-        <Input label="Nombre y apellidos" placeholder="Ingresa tu nombre y tu apellido" type="text"></Input>
-        <Input label="Email" placeholder="Ingresa tu email" type="email"></Input>
-        <Input label="Número de teléfono" placeholder="Escriba su número de telefono" type="text"></Input>
+        <Input label="Nombre y apellidos" placeholder="Ingresa tu nombre y tu apellido" type="text" a=" *"></Input>
+        <Input label="Email" placeholder="Ingresa tu email" type="email" a=" *"></Input>
+        <Input label="Número de teléfono" placeholder="Escriba su número de telefono" type="text" a=" *"></Input>
 
-        <Input label="¿Cuándo prefieres que el consultor contacte contigo?" placeholder="Escriba una fecha y hora" type="date"></Input>
-        <input type="time" class="inpt-container__inpt" required>
+        <!-- <Input label="¿Cuándo prefieres que el consultor contacte contigo?" placeholder="Escriba una fecha y hora" type="date"></Input> -->
+        <div class="inpt-container">
+            <div class="inpt-container__label-container">
+                <label class="inpt-container__label">¿Cuándo prefieres que el consultor contacte contigo? <span class="inpt-container__label__a"></span></label>
+            </div>
+            <input type="date" class="inpt-container__inpt" placeholder="Escriba una fecha y hora">
+        </div>
+        <input type="time" class="inpt-container__inpt">
         <Select label="¿Cuánto podrías ahorrar / invertir?" a=" ">
             <option value="entre 1.000 y 5.000 euros" slot="option">entre 1.000 y 5.000 euros</option>
             <option value="entre 5.000 y 30.000 euros" slot="option">entre 5.000 y 30.000 euros</option>
@@ -367,6 +373,70 @@ button:active {
 
             &__img-container{
                 display: none;
+            }
+        }
+    }
+</style>
+<style lang="scss">
+    .inpt-container{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+
+        &__label-container{
+            display: flex;
+            width: 600px;
+            justify-content: space-between;
+        }
+
+        &__label{
+            font-size: 22px;
+            margin-bottom: 15px;
+
+            &__a{
+                color: hsl(354, 84%, 57%);
+                        opacity: .5;
+            }
+
+            &:hover{
+                cursor: text;
+            }
+        }
+
+        &__label-error{
+            display: none;
+            color: hsl(354, 84%, 57%);
+        }
+
+        &__inpt{
+            width: 600px;
+            padding: 10px;
+            border-radius: 12px;
+            outline: none;
+            border: 1.5px solid #9e9e9e;
+            font-size: 20px;
+            transition: all .5s;
+
+            &::placeholder{
+                opacity: .40;
+                font-weight: 100;
+            }
+
+            &:focus{
+                box-shadow: 0px 0px 40px #ffa93f8c;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 480px){
+        .inpt-container{
+
+            &__label{
+                width: 310px;
+            }
+
+            &__inpt{
+                width: 300px;
             }
         }
     }
