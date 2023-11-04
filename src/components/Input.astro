@@ -1,10 +1,10 @@
 ---
-const { label, placeholder, type } = Astro.props;
+const { label, placeholder, type, a, r } = Astro.props;
 ---
 
 <div class="inpt-container">
     <div class="inpt-container__label-container">
-        <label class="inpt-container__label">{label} <span class="inpt-container__label__a"> *</span></label>
+        <label class="inpt-container__label">{label} <span class="inpt-container__label__a"> {a}</span></label>
         <label class="inpt-container__label inpt-container__label-error">Completa este campo</label>
     </div>
     <input type={type} class="inpt-container__inpt" placeholder={placeholder} required>
