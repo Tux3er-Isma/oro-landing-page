@@ -10,13 +10,14 @@ const { img, title, secondTitle, txt } = Astro.props;
 
 <style lang="scss">
     .card{
+        margin-top: 100px;
         width: 300px;
         display: flex;
         flex-direction: column;
         align-items: center;
 
         &__img{
-            width: 137px;
+            width: 150px;
             transition: all .2s;
 
             &:hover{
@@ -26,8 +27,8 @@ const { img, title, secondTitle, txt } = Astro.props;
         }
 
         &__title, &__txt{
-            margin-top: 20px;
             text-align: center;
+            margin-top: 20px;
         }
 
         &__title{
@@ -38,6 +39,7 @@ const { img, title, secondTitle, txt } = Astro.props;
 
     @media only screen and (min-width: 1600px){
         .card{
+            margin-top: 0px;
 
             &__img{
                 width: 250px;
@@ -51,6 +53,11 @@ const { img, title, secondTitle, txt } = Astro.props;
 
     @media only screen and (max-width: 480px){
         .card{
+            margin-top: 0px;
+
+            &__title{
+                width: 200px;
+            }
 
 
             &__txt{
