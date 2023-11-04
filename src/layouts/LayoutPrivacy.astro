@@ -7,8 +7,10 @@ import { ViewTransitions } from 'astro:transitions';
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="Página Web de Oro Patrimonio" />
+		<meta name="keywords" content="Oro, Patrimonio, Invertir, Inversiones">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="canonical" href="https://oropatrimonio.com"/>
 		<link rel="icon" type="image/svg+xml" href="https://cdn.discordapp.com/attachments/973568724722389052/1167130554433552454/0597b3409a3d817b647d42964501c271.png?ex=654d0208&is=653a8d08&hm=b4b9218389c3617fe8927644c13b81a5413d00210eb4c866da57c0245e339ca0&" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
@@ -18,6 +20,15 @@ import { ViewTransitions } from 'astro:transitions';
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;900&display=swap" rel="stylesheet">
 		<!-- <ViewTransitions /> -->
+		<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4E20ESFSTG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4E20ESFSTG');
+</script>
 	</head>
 	<body>
 			<slot />
@@ -28,13 +39,11 @@ import { ViewTransitions } from 'astro:transitions';
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
-		font-weight: 500;
 		font-family: 'Gabarito', sans-serif;
 		scroll-behavior: smooth;
 	}
 
 	body{
-		overflow-x: hidden;
 		display: flex;
 		flex-direction: column;
 	}
