@@ -11,7 +11,7 @@ const { img, title, secondTitle, txt } = Astro.props;
 <style lang="scss">
     .card{
         margin-top: 100px;
-        width: 300px;
+        width: 150px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -27,7 +27,9 @@ const { img, title, secondTitle, txt } = Astro.props;
         }
 
         &__title, &__txt{
-            text-align: center;
+            position: relative;
+            left: 30px;
+            width: 200px;
             margin-top: 20px;
         }
 
@@ -39,13 +41,15 @@ const { img, title, secondTitle, txt } = Astro.props;
 
     @media only screen and (min-width: 1600px){
         .card{
+            width: 250px;
             margin-top: 0px;
 
             &__img{
                 width: 250px;
             }
 
-            &__title{
+            &__title, &__txt{
+                width: 300px;
                 font-size: 25px;
             }
         }
@@ -53,7 +57,8 @@ const { img, title, secondTitle, txt } = Astro.props;
 
     @media only screen and (max-width: 480px){
         .card{
-            margin-top: 0px;
+            width: 300px;
+            margin-top: 20px;
 
             &__title{
                 width: 200px;

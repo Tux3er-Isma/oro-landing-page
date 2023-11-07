@@ -8,7 +8,7 @@ import pdf from "../../public/diversificacion.pdf";
     <div class="main__cards-container">
         <Card img="https://cdn.discordapp.com/attachments/973568724722389052/1170331448742523072/e96f4422-de2b-46fe-a861-1cab529fc1a1-removebg-preview.png?ex=6558a719&is=65463219&hm=c918eb75ccfe0a5a667c813232c73bd83f47842ae8f412529b0623198dfe2e87&" title="Diversificación" secondTitle="de cartera" txt="El oro reduce el riesgo el agregar variedad a tu portafolio"></Card>
         <Card img="https://cdn.discordapp.com/attachments/973568724722389052/1170331448415371335/image-removebg-preview_-_2023-11-04T125910.918.png?ex=6558a719&is=65463219&hm=3f6e66dc64dac8d20011e50f54f94a7022f6dd1154cba7426a42aba95dab8a1b&" title="Protección contra" secondTitle="la inflación" txt="El oro suele mantener su valor a lo largo del tiempo, protegiéndote de la pérdida de poder adquisitivo."></Card>
-        <Card img="https://cdn.discordapp.com/attachments/973568724722389052/1170331449019351081/image-removebg-preview_-_2023-11-04T125823.143.png?ex=6558a719&is=65463219&hm=155b7696570301adb13cd0120a71e7bdf11ad65c01ef9b98ae40cf1729c9c1b8&" title="Refugio seguro" secondTitle="en tiempos de crisis" txt="En tiempos de crisis económicas o políticas, el oro es un activo refugio que tiende a mantener su valor e incluso incrementarlo"></Card>
+        <Card img="https://cdn.discordapp.com/attachments/973568724722389052/1170331449019351081/image-removebg-preview_-_2023-11-04T125823.143.png?ex=6558a719&is=65463219&hm=155b7696570301adb13cd0120a71e7bdf11ad65c01ef9b98ae40cf1729c9c1b8&" title="Refugio seguro" secondTitle="en tiempos de crisis" txt="El oro es un activo de refugio que tiende a mantener o aumentar su valor en épocas de crisis económicas o políticas."></Card>
     </div>
 </main>
 <div class="main__info-container">
@@ -35,7 +35,7 @@ import pdf from "../../public/diversificacion.pdf";
     .main{
         width: 100vw;
         margin-bottom: 100px;
-        height: 550px;
+        height: 650px;
         padding: 20px;
         margin-top: 30px;
         background-color: #fff1de;
@@ -94,7 +94,7 @@ import pdf from "../../public/diversificacion.pdf";
         &__info-container{
             padding-top: 30px;
             padding-bottom: 100px;
-            background-color: #10071e;
+            background: url("https://cdn.discordapp.com/attachments/973568724722389052/1170491855763406858/orobg.jpg?ex=65593c7d&is=6546c77d&hm=9ee3e3b3384c7d9e53bd0eca91fd2aa1ccdcae8c5bcb4252dc9f8e2b9d3de703&");
             width: 100vw;
             margin-bottom: 100px;
             display: flex;
@@ -161,7 +161,11 @@ import pdf from "../../public/diversificacion.pdf";
 
     @media only screen and (min-width: 1600px){
         .main{
-            height: 650px;
+            height: 800px;
+
+            &__title{
+                margin-bottom: 50px;
+            }
 
             &__cards-container{
                 justify-self: center;
@@ -181,7 +185,7 @@ import pdf from "../../public/diversificacion.pdf";
         }
 
         .main{
-            height: 1200px;
+            height: 1400px;
 
             &__title{
                 text-align: center;
