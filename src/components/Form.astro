@@ -13,13 +13,18 @@ import { Image } from "astro:assets";
         <Input label="Número de teléfono" placeholder="Escriba su número de telefono" type="text" a=" *"></Input>
 
         <!-- <Input label="¿Cuándo prefieres que el consultor contacte contigo?" placeholder="Escriba una fecha y hora" type="date"></Input> -->
-        <div class="inpt-container">
+        <!-- <div class="inpt-container">
             <div class="inpt-container__label-container">
                 <label class="inpt-container__label">¿Cuándo prefieres que el consultor contacte contigo? <span class="inpt-container__label__a"></span></label>
             </div>
             <input type="date" class="inpt-container__inpt" placeholder="Escriba una fecha y hora">
         </div>
-        <input type="time" class="inpt-container__inpt">
+        <input type="time" class="inpt-container__inpt"> -->
+        <Select label="¿Cuándo prefieres que el consultor contacte contigo?" a=" ">
+            <option value="Mañanas" slot="option">Mañanas</option>
+            <option value="Tardes" slot="option">Tardes</option>
+            <option value="Escojer opción" disabled selected class="select-container__select__option" slot="option">Escojer opción</option>
+        </Select>
         <Select label="¿Cuánto podrías ahorrar / invertir?" a=" ">
             <option value="entre 1.000 y 5.000 euros" slot="option">entre 1.000 y 5.000 euros</option>
             <option value="entre 5.000 y 30.000 euros" slot="option">entre 5.000 y 30.000 euros</option>
