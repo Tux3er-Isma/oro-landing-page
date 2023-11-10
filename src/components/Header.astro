@@ -67,11 +67,10 @@ import video from "../../public/video.mp4";
                 width: 700px;
                 outline: 10px solid #fff;
                 border-radius: 20px;
-                background: url("https://cdn.discordapp.com/attachments/973568724722389052/1171903222550646805/Sin_titulo-1-1.jpg?ex=655e5eed&is=654be9ed&hm=53c46ba6f907b4221f4a71932cc4ca1c0d3146bf3fc409a7bcb6a6d4744fb386&");
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background-size: 700px 400px;
+                object-fit: cover;   
 
                 &__play{
                     border-radius: 50%;
@@ -90,6 +89,12 @@ import video from "../../public/video.mp4";
                 height: 400px;
                 width: 700px;
                 display: none;
+            }
+
+            &__video--2{
+                background: url("https://cdn.discordapp.com/attachments/973568724722389052/1171903222550646805/Sin_titulo-1-1.jpg?ex=655e5eed&is=654be9ed&hm=53c46ba6f907b4221f4a71932cc4ca1c0d3146bf3fc409a7bcb6a6d4744fb386&");
+                background-size: 700px 400px;
+                background-repeat: no-repeat;
             }
         }
 
@@ -186,6 +191,10 @@ import video from "../../public/video.mp4";
                     height: 440px;
                     width: 770px;
                 }
+
+                &__video--2{
+                    background-size: 800px 470px;
+                }
             }
 
             &__btn{
@@ -196,7 +205,53 @@ import video from "../../public/video.mp4";
         }
     }
 
-    @media only screen and (max-width: 480px){
+    @media only screen and (max-width: 320px){
+        .header{
+            margin-bottom: 100px;
+
+            &__title-container{
+                background-color: #000;
+                width: 100vw;
+                padding-bottom: 20px;
+
+                &__title{
+                    font-size: 30px;
+                }
+            }
+
+            &__img{
+                top: 100px;
+                width: 100vw;
+                height: 50vh;
+                position: absolute;
+                z-index: -10;
+            }
+
+            &__video-container{
+
+                &__video{ 
+                    margin-top: 20px;
+                    width: 280px;
+                    height: 200px;       
+
+                    &__play{
+                        width: 70px;
+                    }
+                }
+
+                &__video--1{
+                    width: 280px;
+                    height: 200px;
+                }
+
+                &__video--2{
+                    background-size: 280px 200px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 321px) and (max-width: 480px){
         .header{
             margin-bottom: 100px;
 
@@ -237,6 +292,10 @@ import video from "../../public/video.mp4";
                 &__video--1{
                     width: 350px;
                     height: 200px;
+                }
+
+                &__video--2{
+                    background-size: 350px 200px;
                 }
             }
         }
@@ -320,6 +379,11 @@ import video from "../../public/video.mp4";
 <!-- <script src="./emailJs.js"></script> -->
 
 <script is:inline>
+    const videoContainer = document.querySelectorAll(".header__video-container__video");
+    // videoContainer.forEach(video =>{
+    //     console.log(video);
+    // })
+    console.log(videoContainer[1].style.background);
     const video1 = document.querySelector('.header__video-container__video--1');
     const video2 = document.querySelector('.header__video-container__video--2');
     const playBtn = document.querySelector('.header__video-container__video__play');

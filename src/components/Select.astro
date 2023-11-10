@@ -46,12 +46,21 @@ const { label, a, optionL } = Astro.props;
                     }
                 }
             }
-            @media only screen and (max-width: 480px){
+
+            @media only screen and (max-width: 320px){
+                .select-container{
+
+                &__select, &__label-select{
+                    width: 250px;
+                }
+            }
+        }
+
+            @media only screen and (min-width: 321px) and (max-width: 480px){
             .select-container{
 
             &__select, &__label-select{
                 width: 300px;
             }
-        }
-        }
+            }}
 </style>

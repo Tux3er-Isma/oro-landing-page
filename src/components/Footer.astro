@@ -20,9 +20,30 @@ import pdf from "../../public/diversificacion.pdf";
         </button></a>
     </div>
     <a class="footer__link" href="/privacy">Política de Privacidad</a>
+    <p class="pyme-txt">Página web realizada por: <a href="https://pymewebteam.netlify.app/" target="_blank" class="pymewebteam">PymeWebTeam</a></p>
 </footer>
 
 <style lang="scss">
+    .pyme-txt{
+        position: absolute;
+        margin-top: 70px;
+        left: 60px;
+        color: #fff;
+        opacity: .5;
+    }
+
+    .pymewebteam{
+        margin-top: 5px;
+        color: #fff;
+        transition: all .5s;
+
+        &:hover{
+            cursor: pointer;
+            opacity: 1;
+            color: #ff364d;
+        }
+    }
+
     .footer{
         width: 100vw;
         padding: 20px;
@@ -179,6 +200,26 @@ import pdf from "../../public/diversificacion.pdf";
     }
 
     @media only screen and (max-width: 480px){
+        .pyme-txt{
+            position: relative;
+            left: 0px;
+            margin-top: 20px;
+        color: #fff;
+        opacity: .5;
+   }
+
+    .pymewebteam{
+        margin-top: 5px;
+        color: #fff;
+        transition: all .5s;
+
+        &:hover{
+            cursor: pointer;
+            opacity: 1;
+            color: #ff364d;
+        }
+    }
+
         .footer{
 
             &__btn-container{

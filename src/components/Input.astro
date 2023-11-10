@@ -61,7 +61,20 @@ const { label, placeholder, type, a, r } = Astro.props;
         }
     }
 
-    @media only screen and (max-width: 480px){
+    @media only screen and (max-width: 320px){
+        .inpt-container{
+
+            &__label{
+                width: 310px;
+            }
+
+            &__inpt{
+                width: 250px;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 321px) and (max-width: 480px){
         .inpt-container{
 
             &__label{

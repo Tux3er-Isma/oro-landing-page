@@ -329,7 +329,42 @@ button:active {
         }
     }
 
-    @media only screen and (max-width: 480px){
+    @media only screen and (max-width: 320px){
+        .form-container{
+            height: 1250px;
+
+            &__title{
+                width: 260px;
+                font-size: 40px;
+                font-weight: bold;
+                margin-bottom: 20px;
+                margin-left: 40px;
+            }
+
+            &__form{
+
+                &__msg-container{
+
+                    &__inpt{
+                        width: 250px;
+                    }
+                }
+
+                &__checkbox-container{
+
+                    &__txt{
+                        width: 200px;
+                    }
+                }
+            }
+
+            &__img-container{
+                display: none;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 321px) and (max-width: 480px){
         .inpt-container{
 
             &__inpt{
