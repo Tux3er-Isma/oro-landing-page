@@ -1,12 +1,12 @@
 ---
-import { Image } from "astro:assets";
 import gold from "../../public/gold.png";
 import playBtn from "../../public/play-btn.png";
+import Image from "../../node_modules/astro/components/Image.astro";
 ---
 
 <header class="header" id="header">
     <div class="header__black"></div>
-    <img src={gold.src} alt="" class="header__img">
+    <Image src={gold} alt="Oro Patrimonio" class="header__img"></Image>
     <div class="header__title-container">
         <h1 class="header__title-container__title">Descubre la rentabilidad y seguridad que ofrece el oro</h1>
     </div>
@@ -15,7 +15,7 @@ import playBtn from "../../public/play-btn.png";
             <source src="/Video.mp4" type="video/mp4">
           </video>
           <div class="header__video-container__video header__video-container__video--2">
-            <img src={playBtn.src} alt="Play Btn" class="header__video-container__video__play">
+            <Image src={playBtn} alt="Play Btn" class="header__video-container__video__play"></Image>
           </div>
     </div>
     <a href="#form-container"><button type="button" class="header__btn">¿Quieres saber más?</button></a>
@@ -31,7 +31,7 @@ import playBtn from "../../public/play-btn.png";
         margin-bottom: 400px;
 
         &__img{
-            width: 98.7vw;
+            width: 100vw;
             position: absolute;
             top: -60px;
             height: 120vh;
@@ -75,6 +75,7 @@ import playBtn from "../../public/play-btn.png";
                 &__play{
                     border-radius: 50%;
                     width: 100px;
+                    height: 100px;
                     transition: all .5s;
 
                     &:hover{
