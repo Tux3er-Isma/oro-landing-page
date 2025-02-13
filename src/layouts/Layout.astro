@@ -31,7 +31,7 @@ import { ViewTransitions } from 'astro:transitions';
       emailjs.init("oxNMD8G8v0yiMdSSq");
    })();
 </script>
-<script>
+<script is:inline>
 	let btn = document.querySelector("#form-container > form > button");
 	let nameInpt = document.querySelector("#form-container > form > div:nth-child(1) > input");
 	let emailInpt = document.querySelector("#form-container > form > div:nth-child(2) > input");
