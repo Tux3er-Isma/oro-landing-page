@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import gold from "../../public/gold.png";
+import playBtn from "../../public/play-btn.png";
 ---
 
 <header class="header" id="header">
@@ -14,7 +15,7 @@ import gold from "../../public/gold.png";
             <source src="/Video.mp4" type="video/mp4">
           </video>
           <div class="header__video-container__video header__video-container__video--2">
-            <img src="/play-btn.png" alt="Play Btn" class="header__video-container__video__play">
+            <img src={playBtn.src} alt="Play Btn" class="header__video-container__video__play">
           </div>
     </div>
     <a href="#form-container"><button type="button" class="header__btn">¿Quieres saber más?</button></a>
@@ -91,7 +92,7 @@ import gold from "../../public/gold.png";
             }
 
             &__video--2{
-                background: url("/video-bg.jpg");
+                background: url("./video-bg.jpg");
                 background-size: 700px 400px;
                 background-repeat: no-repeat;
             }
