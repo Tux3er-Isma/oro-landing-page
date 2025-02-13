@@ -1,9 +1,10 @@
 ---
 const { img, title, secondTitle, txt } = Astro.props;
+import Image from "../../node_modules/astro/components/Image.astro";
 ---
 
 <div class="card">
-    <img src={img} alt={title} class="card__img">
+    <Image src={img} alt={title} class="card__img"></Image>
     <h3 class="card__title">{title} <br> {secondTitle}</h3>
     <p class="card__txt">{txt}</p>
 </div>
@@ -18,6 +19,7 @@ const { img, title, secondTitle, txt } = Astro.props;
 
         &__img{
             width: 150px;
+            height: 150px;
             transition: all .2s;
 
             &:hover{
@@ -46,6 +48,7 @@ const { img, title, secondTitle, txt } = Astro.props;
 
             &__img{
                 width: 250px;
+                height: 250px;
             }
 
             &__title, &__txt{
