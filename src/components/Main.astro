@@ -1,24 +1,21 @@
 ---
 import Card from "./Card.astro";
-import Money from "../assets/money.png"
-import Pig from "../assets/pig.png"
-import Save from "../assets/save.png"
-import Arrow from "../assets/arrow.png"
+import pdf from "../../public/diversificacion.pdf";
 ---
 
 <main class="main">
     <h1 class="main__title">3 Razones para <br class="br-1">invertir <br class="br-2">en <span class="main__title__orange">METALES DE INVERSIÓN</span></h1>
     <div class="main__cards-container">
-        <Card img={Money} title="Diversificación" secondTitle="de cartera" txt="El oro reduce el riesgo el agregar variedad a tu portafolio"></Card>
-        <Card img={Pig} title="Protección contra" secondTitle="la inflación" txt="El oro suele mantener su valor a lo largo del tiempo, protegiéndote de la pérdida de poder adquisitivo."></Card>
-        <Card img={Save} title="Refugio seguro" secondTitle="en tiempos de crisis" txt="El oro es un activo de refugio que tiende a mantener o aumentar su valor en épocas de crisis económicas o políticas."></Card>
+        <Card img="/money.png" title="Diversificación" secondTitle="de cartera" txt="El oro reduce el riesgo el agregar variedad a tu portafolio"></Card>
+        <Card img="/pig.png" title="Protección contra" secondTitle="la inflación" txt="El oro suele mantener su valor a lo largo del tiempo, protegiéndote de la pérdida de poder adquisitivo."></Card>
+        <Card img="/save.png" title="Refugio seguro" secondTitle="en tiempos de crisis" txt="El oro es un activo de refugio que tiende a mantener o aumentar su valor en épocas de crisis económicas o políticas."></Card>
     </div>
 </main>
 <div class="main__info-container">
     <p class="main__info-container__txt">¿Por qué los <span class="main__info-container__txt__y">Bancos Centrales</span> están incrementando la compra de <span class="main__info-container__txt__y">oro</span> a marchas forzadas? </p>
     <p class="main__info-container__txt">¿Por qué las personas de <span class="main__info-container__txt__y">éxito financiero</span> invierten en <span class="main__info-container__txt__y">oro?</span> </p>
     <p class="main__info-container__txt">¿Por qué los <span class="main__info-container__txt__y">expertos financieros</span> aconsejan diversificar la cartera de inversión en <span class="main__info-container__txt__y">oro?</span></p>
-    <img src={Arrow.src} alt="Arrow" class="main__info-container__img">
+    <img src="/arrow.png" alt="Arrow" class="main__info-container__img">
     <a href="/slide"><button type="button" class="main__info-container__btn">Descúbrelo aquí</button></a>
 </div>
 <!-- <div class="main__arrow-container">
@@ -97,7 +94,7 @@ import Arrow from "../assets/arrow.png"
         &__info-container{
             padding-top: 30px;
             padding-bottom: 100px;
-            background: #0c0610;
+            background: url("/info-bg.jpg");
             width: 100vw;
             margin-bottom: 100px;
             display: flex;

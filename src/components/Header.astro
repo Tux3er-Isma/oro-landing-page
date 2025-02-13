@@ -1,13 +1,11 @@
 ---
-import gold from "../assets/gold.png";
-import playBtn from "../assets/play-btn.png";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
+import gold from "../../public/gold.png";
 ---
 
-<img src="/public/save.png" alt="">
 <header class="header" id="header">
     <div class="header__black"></div>
-    <Image src={gold} alt="Oro Patrimonio" class="header__img"></Image>
+    <img src={gold.src} alt="" class="header__img">
     <div class="header__title-container">
         <h1 class="header__title-container__title">Descubre la rentabilidad y seguridad que ofrece el oro</h1>
     </div>
@@ -16,7 +14,7 @@ import { Image } from 'astro:assets';
             <source src="/Video.mp4" type="video/mp4">
           </video>
           <div class="header__video-container__video header__video-container__video--2">
-            <Image src={playBtn} alt="Play Btn" class="header__video-container__video__play"></Image>
+            <img src="/play-btn.png" alt="Play Btn" class="header__video-container__video__play">
           </div>
     </div>
     <a href="#form-container"><button type="button" class="header__btn">¿Quieres saber más?</button></a>
@@ -32,7 +30,7 @@ import { Image } from 'astro:assets';
         margin-bottom: 400px;
 
         &__img{
-            width: 100vw;
+            width: 98.7vw;
             position: absolute;
             top: -60px;
             height: 120vh;
@@ -76,7 +74,6 @@ import { Image } from 'astro:assets';
                 &__play{
                     border-radius: 50%;
                     width: 100px;
-                    height: 100px;
                     transition: all .5s;
 
                     &:hover{
@@ -94,7 +91,7 @@ import { Image } from 'astro:assets';
             }
 
             &__video--2{
-                background: url("../assets/video-bg.jpg");
+                background: url("/video-bg.jpg");
                 background-size: 700px 400px;
                 background-repeat: no-repeat;
             }
